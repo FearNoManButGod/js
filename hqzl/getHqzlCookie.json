@@ -8,7 +8,7 @@
     "mitmhost": ["hqapp.faw.cn"],
     "list": [
       {
-        "match": "fawcshop/members/task/v2/getTaskList",
+        "match": "fawcshop/members/task/v2/getTaskList?taskType=integral",
         "stage": "req",
         "target": "https://raw.githubusercontent.com/FearNoManButGod/js/main/hqzl/getHqzlCookie.js",
         "enable": true
