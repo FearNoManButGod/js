@@ -10,7 +10,7 @@ let kgyy = ($.isNode() ? process.env.kgyy : $.getdata("kgyy")) || "";
 .finally(() => $.done())
 
 async function GetRewrite() {
-  if ($request.url.indexOf("task/sign_state") > -1 && request.url.indexOf("dfid=") > -1 && request.url.indexOf("userid=") > -1
+  if ($request.url.indexOf("v1/user/info") > -1 && request.url.indexOf("dfid=") > -1 && request.url.indexOf("userid=") > -1
   && request.url.indexOf("mid=") > -1  && request.url.indexOf("uuid=") > -1  && request.url.indexOf("token=") > -1) {
       const ck1 = $request.url;
     
