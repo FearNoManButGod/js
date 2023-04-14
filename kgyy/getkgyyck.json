@@ -10,7 +10,7 @@
       {
         "match": "task/sign_state",
         "stage": "req",
-        "target": "https://raw.githubusercontent.com/FearNoManButGod/js/main/khyy/getkgyyck.js",
+        "target": "https://raw.githubusercontent.com/FearNoManButGod/js/main/kgyy/getkgyyck.js",
         "enable": true
       }
     ]
