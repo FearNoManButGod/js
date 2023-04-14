@@ -4,6 +4,8 @@ let kgyy = ($.isNode() ? process.env.kgyy : $.getdata("kgyy")) || "";
 !(async () => {
   if (typeof $request !== "undefined") {
     await GetRewrite();
+  }else{
+    console.log(1111);
   }
 })()
 .catch((e) => $.logErr(e))
