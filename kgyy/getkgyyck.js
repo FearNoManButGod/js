@@ -10,10 +10,10 @@ let kgyy = ($.isNode() ? process.env.kgyy : $.getdata("kgyy")) || "";
 })()
 .catch((e) => $.logErr(e))
 .finally(() => $.done())
-
+http://welfare.kugou.com/pendant?dfid=2ly6tD4T25Eo3sb1t00XGMNj&signature=071ffb23b7671b5f7e6eb69e6c8279f4&appid=1005&mid=232386800612524621546600364337055217105&super_type=1&clientver=11609&vip_level_version=1&clienttime=1681565534&uuid=056bd6b2d6f0bff9e0fb475f4e717791&userid=1155769403&token=e5917a8ee91c87febd254325b81179ea40b38283c2bdc58dfc213e38268b8d15&kugouid=1155769403
 async function GetRewrite() {
-  if ($request.url.indexOf("v1/user/info") > -1 && request.url.indexOf("dfid=") > -1 && request.url.indexOf("userid=") > -1
-  && request.url.indexOf("mid=") > -1  && request.url.indexOf("uuid=") > -1  && request.url.indexOf("token=") > -1) {
+  if ($request.url.indexOf("dfid=") > -1 && $request.url.indexOf("userid=") > -1
+  && $request.url.indexOf("mid=") > -1  && $request.url.indexOf("uuid=") > -1  && $request.url.indexOf("token=") > -1) {
       const ck1 = $request.url;
     
       if (kgyy) {
