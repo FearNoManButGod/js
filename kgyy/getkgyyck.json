@@ -8,7 +8,7 @@
     "mitmhost": ["gateway.kugou.com","welfare.kugou.com"],
     "list": [
       {
-        "match": "v1/user/info",
+        "match": "v1||v2/",
         "stage": "req",
         "target": "https://raw.githubusercontent.com/FearNoManButGod/js/main/kgyy/getkgyyck.js",
         "enable": true
