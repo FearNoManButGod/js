@@ -5,7 +5,7 @@
     "date": "2023-03-06 13:30:16",
     "type": "rewrite",
     "resource": "https://raw.githubusercontent.com/FearNoManButGod/js/main/kgyy/getkgyyck.json",
-    "mitmhost": ["gateway.kugou.com"],
+    "mitmhost": ["gateway.kugou.com","welfare.kugou.com"],
     "list": [
       {
         "match": "v1/user/info",
