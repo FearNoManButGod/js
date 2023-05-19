@@ -11,7 +11,7 @@ let dtCookie = ($.isNode() ? process.env.dtCookie : $.getdata("dtCookie")) || ""
 async function GetRewrite() {
   if ($request.url.indexOf("v2/user/notifications/unread") > -1) {
       let ck1 = $request.headers.Authorization;
-      ck1=ck1..replace("Bearer ","")
+      ck1=ck1.replace("Bearer ","")
       if (dtCookie) {
           if (dtCookie.indexOf(ck1) == -1) {
               dtCookie = dtCookie + "@" + ck1;
