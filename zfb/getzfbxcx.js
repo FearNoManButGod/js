@@ -10,26 +10,43 @@ let oldtoken = $.getdata('zfbxcx');
 .finally(() => $.done())
 
  function getcookie() {
-    if ($request.url.match(/\/ad.zyxdit.com\/api\/cms\/article\/articleList/)) {
-        headers = $request.headers
-        console.log(headers.token)
-        token=headers.token;
+    if ($request.url.match(/\/ad.zyxdit.com\/api\/alipay\/authCode/)) {
+let appid=""
+        let authCode=""
+        let reqbody = $request.body
+        reqbody.split("&").forEach(async element => {
+            if (element.indexOf("appid=") !== -1) {
+                appid= element.split("=")[1]
+            } 
+            if (element.indexOf("authCode=") !== -1) {
+                authCode= element.split("=")[1]
+            } 
+
+         })
+		let respbody=$response.body;
+let obj = JSON.parse(respbody)
+         let token1=obj.data.token
+
+        let token="";
+         if(appid && authCode && token1){
+            token=token1+"#"+appid+"#"+authCode
+         }
+         console.log(token)
         if(oldtoken&&token){
           if (oldtoken.indexOf(token) > -1) {
-            $.log("此Token已存在，本次跳过")
-          } else if (oldtoken.indexOf(token) == -1) {
-              newToken = oldtoken + "@" + token;
+             $.log("此Token已存在，本次跳过")
+           } else if (oldtoken.indexOf(token) == -1) {
+            newToken = oldtoken + "@" + token;
               $.setdata(newToken, 'zfbxcx');
               $.log(`${$.name}获取Token: 成功, zfbxcx: ${newToken}`);
-              bodys = newToken.split("@")
-              $.msg($.name, "获取第" + bodys.length + "个Token: 成功🎉", `Token:${token}`)
-          }
-
-        }else{
-          $.setdata(token, 'zfbxcx');
-          $.log(`${$.name}token获取成功: 成功, zfbxcx: ${token}`);
-          $.msg($.name, `获取第1个token: 成功🎉`, `Token:${token}`)
-        }
+               bodys = newToken.split("@")
+               $.msg($.name, "获取第" + bodys.length + "个Token: 成功🎉", `Token:${token}`)
+           }
+         }else{
+           $.setdata(token, 'zfbxcx');
+           $.log(`${$.name}token获取成功: 成功, zfbxcx: ${token}`);
+           $.msg($.name, `获取第1个token: 成功🎉`, `Token:${token}`)
+         }
     }
 
   }
