@@ -8,7 +8,7 @@
     "mitmhost": ["ad.zyxdit.com"],
     "list": [
       {
-        "match": "ad.zyxdit.com/api/cms/article/articleList",
+        "match": "ad.zyxdit.com/api/alipay/authCode",
         "stage": "req",
         "target": "https://raw.githubusercontent.com/FearNoManButGod/js/main/zfb/getzfbxcx.js",
         "enable": true
