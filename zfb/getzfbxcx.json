@@ -9,7 +9,7 @@
     "list": [
       {
         "match": "ad.zyxdit.com/api/alipay/authCode",
-        "stage": "req",
+        "stage": "res",
         "target": "https://raw.githubusercontent.com/FearNoManButGod/js/main/zfb/getzfbxcx.js",
         "enable": true
       }
