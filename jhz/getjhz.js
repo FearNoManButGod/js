@@ -12,7 +12,7 @@ let jhkck = ($.isNode() ? process.env.jhkck : $.getdata("jhkck")) || "";
 .finally(() => $.done())
 async function GetRewrite() {
   if ($request.url.indexOf("userId=") > -1) {
-    let userId=""
+      let userId=""
       let url =$request.url.split("&");
       url.forEach(async element => {
         if (element.indexOf("userId=") !== -1) {

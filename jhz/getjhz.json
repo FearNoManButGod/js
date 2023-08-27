@@ -8,7 +8,7 @@
     "mitmhost": ["applet.dongcheng1.com"],
     "list": [
       {
-        "match": "yxq?Interface=",
+        "match": "/yxq",
         "stage": "req",
         "target": "https://raw.githubusercontent.com/FearNoManButGod/js/main/jhz/getjhz.js",
         "enable": true
