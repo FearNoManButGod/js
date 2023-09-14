@@ -10,28 +10,8 @@ let oldtoken = $.getdata('zfbxcx');
 .finally(() => $.done())
 
  function getcookie() {
-    if ($request.url.match(/\/ad.zyxdit.com\/api\/alipay\/authCode/)) {
-let appid=""
-        let authCode=""
-        let reqbody = $request.body
-        reqbody.split("&").forEach(async element => {
-            if (element.indexOf("appid=") !== -1) {
-                appid= element.split("=")[1]
-            } 
-            if (element.indexOf("authCode=") !== -1) {
-                authCode= element.split("=")[1]
-            } 
-
-         })
-		let respbody=$response.body;
-let obj = JSON.parse(respbody)
-         let token1=obj.data.token
-
-        let token="";
-         if(appid && authCode && token1){
-            token=token1+"#"+appid+"#"+authCode
-         }
-         console.log(token)
+    if ($request.url.match(/\/ad.zyxdit.com\/api\/cip\/cms\/article\/articleList/)) {
+      let token = $request.headers.token;
         if(oldtoken&&token){
           if (oldtoken.indexOf(token) > -1) {
              $.log("此Token已存在，本次跳过")
