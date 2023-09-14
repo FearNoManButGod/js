@@ -12,7 +12,7 @@ let oldtoken = $.getdata('zfbxcx');
  function getcookie() {
     if($request.url.indexOf('articleList') > -1) {
       let token = $request.headers.token;
-      let num =newToken.split("@").length;
+      let num =oldtoken.split("@").length;
       if(num == 3){
         oldtoken="";
       };
