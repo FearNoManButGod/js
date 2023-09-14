@@ -1,5 +1,4 @@
 const $ = new Env("支付宝赚钱");
-let oldtoken = $.getdata('zfbxcx');
 !(async () => {
     if (typeof $request !== "undefined") {
         getcookie()
@@ -12,20 +11,9 @@ let oldtoken = $.getdata('zfbxcx');
  function getcookie() {
     if($request.url.indexOf('articleList') > -1) {
       let token = $request.headers.token;
-        if(oldtoken&&token){
-          if (oldtoken.indexOf(token) > -1) {
-             $.log("此Token已存在，本次跳过")
-           } else if (oldtoken.indexOf(token) == -1) {
-            newToken = oldtoken + "@" + token;
-              $.setdata(newToken, 'zfbxcx');
-              $.log(`${$.name}获取Token: 成功, zfbxcx: ${newToken}`);
-               bodys = newToken.split("@")
-               $.msg($.name, "获取第" + bodys.length + "个Token: 成功🎉", `Token:${token}`)
-           }
-         }else{
-           $.setdata(token, 'zfbxcx');
-           $.log(`${$.name}token获取成功: 成功, zfbxcx: ${token}`);
-           $.msg($.name, `获取第1个token: 成功🎉`, `Token:${token}`)
+        if(token){
+          $.log(`${$.name}token获取成功🎉, token: ${token}`);
+          $.msg($.name, `token获取成功🎉`, `${token}`)
          }
     }
 
