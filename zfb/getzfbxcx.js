@@ -10,7 +10,7 @@ let oldtoken = $.getdata('zfbxcx');
 .finally(() => $.done())
 
  function getcookie() {
-    if ($request.url.match(/\/ad.zyxdit.com\/api\/cip\/cms\/article\/articleList/)) {
+    if($request.url.indexOf('articleList') > -1) {
       let token = $request.headers.token;
         if(oldtoken&&token){
           if (oldtoken.indexOf(token) > -1) {
