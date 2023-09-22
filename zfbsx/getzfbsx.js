@@ -1,4 +1,4 @@
-const $ = new Env("支付宝赚钱");
+const $ = new Env("轻松赚小钱，赚点钱钱，集集赚小钱支付宝赚钱");
 !(async () => {
     if (typeof $request !== "undefined") {
         getcookie()
