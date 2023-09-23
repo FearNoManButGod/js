@@ -9,7 +9,7 @@ const $ = new Env("轻松赚小钱，赚点钱钱，集集赚小钱支付宝赚�
 .finally(() => $.done())
 
  function getcookie() {
-    if($request.url.indexOf('authCode') > -1) {
+    if($request.url.indexOf('task/list/v2') > -1) {
       let token = $request.headers.kp;
         if(token){
           $.log(`${$.name}token获取成功🎉, token: ${token}`);
